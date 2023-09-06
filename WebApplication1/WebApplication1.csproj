@@ -1,0 +1,910 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{44A98D5F-2AE6-44E8-B30D-56EBE371DCC0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44327</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>D:\M.C.S 1ST\all asp.net project\Generate Invoice PDF in Shopping Website\iTextSharp Dll File\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.33.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.33\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2.jpg" />
+    <Content Include="accordion.aspx" />
+    <Content Include="addtocart.aspx" />
+    <Content Include="admin1.aspx" />
+    <Content Include="adminproduct1.aspx" />
+    <Content Include="baground img\1.jpg" />
+    <Content Include="baground img\10.jpg" />
+    <Content Include="baground img\2.jpeg" />
+    <Content Include="baground img\3.jpg" />
+    <Content Include="baground img\4.jpg" />
+    <Content Include="baground img\5.jpg" />
+    <Content Include="baground img\6.jpg" />
+    <Content Include="baground img\7.jpg" />
+    <Content Include="baground img\8.jpg" />
+    <Content Include="baground img\9.jpeg" />
+    <Content Include="bill.aspx" />
+    <Content Include="billnew.aspx" />
+    <Content Include="cart.aspx" />
+    <Content Include="cart1.aspx" />
+    <Content Include="cymbals.aspx" />
+    <Content Include="demoadmin.aspx" />
+    <Content Include="discountproduct.aspx" />
+    <Content Include="flute.aspx" />
+    <Content Include="forget.aspx" />
+    <Content Include="Aboutus.aspx" />
+    <Content Include="adminlogin.aspx" />
+    <Content Include="adminproduct.aspx" />
+    <Content Include="bootstrap2\css\bootstrap-grid.css" />
+    <Content Include="bootstrap2\css\bootstrap-grid.min.css" />
+    <Content Include="bootstrap2\css\bootstrap-reboot.css" />
+    <Content Include="bootstrap2\css\bootstrap-reboot.min.css" />
+    <Content Include="bootstrap2\css\bootstrap.css" />
+    <Content Include="bootstrap2\css\bootstrap.min.css" />
+    <Content Include="bootstrap2\js\bootstrap.bundle.js" />
+    <Content Include="bootstrap2\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap2\js\bootstrap.js" />
+    <Content Include="bootstrap2\js\bootstrap.min.js" />
+    <Content Include="forget1.aspx" />
+    <Content Include="Guitar1.aspx" />
+    <Content Include="harmonium.aspx" />
+    <Content Include="harpsichord.aspx" />
+    <Content Include="imgslider\3.jpeg" />
+    <Content Include="imgslider\4.jpg" />
+    <Content Include="imgslider\5.jpeg" />
+    <Content Include="information.aspx" />
+    <Content Include="musicimage\1-cool-violins-pretty-violins.jpg" />
+    <Content Include="musicimage\1.jpg" />
+    <Content Include="musicimage\10 octave violin.jpg" />
+    <Content Include="musicimage\11 yamaha V10SG violin.jpg" />
+    <Content Include="musicimage\00 .jpg" />
+    <Content Include="musicimage\13 silent violin.jpg" />
+    <Content Include="musicimage\14 wodden violin.jpg" />
+    <Content Include="musicimage\15 classic wood violin.jpg" />
+    <Content Include="musicimage\16 hand craved violin.jpg" />
+    <Content Include="musicimage\17 craved violin.jpg" />
+    <Content Include="musicimage\18 rpyal painted violin.jpg" />
+    <Content Include="musicimage\19 atristic violin.jpg" />
+    <Content Include="musicimage\2 mechanical.jpg" />
+    <Content Include="musicimage\20 hand decorated violin.jpg" />
+    <Content Include="musicimage\23 bass guitar.jpg" />
+    <Content Include="musicimage\24 jazz guitar.jpg" />
+    <Content Include="musicimage\25 fender-elite-jazz- guitar.jpg" />
+    <Content Include="musicimage\26 classic guitar.jpg" />
+    <Content Include="musicimage\27 Ibanez guitar.jpg" />
+    <Content Include="musicimage\28 martin guitar.jpg" />
+    <Content Include="musicimage\29 Acoustic green guiytar.jpg" />
+    <Content Include="musicimage\3 electric.jpg" />
+    <Content Include="musicimage\30 Gibso guitar.jpg" />
+    <Content Include="musicimage\31 Luna guitar.jpg" />
+    <Content Include="musicimage\32 electic resonator guitar.jpg" />
+    <Content Include="musicimage\33 giggle jazz guitar.jpg" />
+    <Content Include="musicimage\34 metal resonator guitar.jpg" />
+    <Content Include="musicimage\35 vintage guiytar.jpg" />
+    <Content Include="musicimage\36 recording king guitar.jpg" />
+    <Content Include="musicimage\37 miami bass guitar.jpg" />
+    <Content Include="musicimage\38 kharak pancham sitar.jpg" />
+    <Content Include="musicimage\39 bass sitar.jpg" />
+    <Content Include="musicimage\4 steampunk violin.jpg" />
+    <Content Include="musicimage\40 gandhar pancham sitar.jpg" />
+    <Content Include="musicimage\5 dulux fancy violin.jpg" />
+    <Content Include="musicimage\6 hardanger violin.jpg" />
+    <Content Include="musicimage\7 skinny bone electric.jpg" />
+    <Content Include="musicimage\8 bridge lyra violin.jpg" />
+    <Content Include="musicimage\9 black purplr violin.jpg" />
+    <Content Include="musicimage\a Ga.jpg" />
+    <Content Include="musicimage\b Ga.jpg" />
+    <Content Include="musicimage\c Ga.jpg" />
+    <Content Include="musicimage\d Bass ditar.jpg" />
+    <Content Include="musicimage\e handmade bass sitar.jpg" />
+    <Content Include="musicimage\f bass sitar.jpg" />
+    <Content Include="musicimage\g kharak pancham.jpg" />
+    <Content Include="musicimage\79 sitar.jpg" />
+    <Content Include="musicimage\i kharak pancham.jpg" />
+    <Content Include="payment1.aspx" />
+    <Content Include="piano.aspx" />
+    <Content Include="piccolo.aspx" />
+    <Content Include="placeorder.aspx" />
+    <Content Include="product 3\1 electric accordian.jpg" />
+    <Content Include="product 3\10 bass accordian.jpg" />
+    <Content Include="product 3\11 aie accordion.jpeg" />
+    <Content Include="product 3\12 digital accordion.jpg" />
+    <Content Include="product 3\13 piano accprdian.jpg" />
+    <Content Include="product 3\14 manfrini accordion.jpeg" />
+    <Content Include="product 3\15 wood accordion.jpeg" />
+    <Content Include="product 3\16 dulex harmonium.jpg" />
+    <Content Include="product 3\17 harmonium folding.jpg" />
+    <Content Include="product 3\18 black wood harmonium.jpg" />
+    <Content Include="product 3\19 sursangam harmonium.jpeg" />
+    <Content Include="product 3\2 antique accordian.jpg" />
+    <Content Include="product 3\20 keyboard harmonium.jpg" />
+    <Content Include="product 3\21 antique harmonium.jpg" />
+    <Content Include="product 3\22 scale changer harmonium.jpeg" />
+    <Content Include="product 3\23 electric harmonium.jpeg" />
+    <Content Include="product 3\24 yamaha harmonium.jpeg" />
+    <Content Include="product 3\25 portable harmonium.jpeg" />
+    <Content Include="product 3\26 kaeyoad harmonium.jpeg" />
+    <Content Include="product 3\27 indian harmonium.jpeg" />
+    <Content Include="product 3\28 best harmonium.jpg" />
+    <Content Include="product 3\29 dulex harmonium.jpeg" />
+    <Content Include="product 3\30 electric harmonium.jpg" />
+    <Content Include="product 3\31 classic harpsichord.jpeg" />
+    <Content Include="product 3\32 old harpsichord.jpeg" />
+    <Content Include="product 3\33 antique harpsichord.jpeg" />
+    <Content Include="product 3\34 antique harpsichord.jpg" />
+    <Content Include="product 3\35 small harpsichord.jpeg" />
+    <Content Include="product 3\36 bizzi harpsichord.jpeg" />
+    <Content Include="product 3\37 formal harpsichord.jpeg" />
+    <Content Include="product 3\38 hand harpsichord.jpg" />
+    <Content Include="product 3\39 handheld harpsichord.jpeg" />
+    <Content Include="product 3\4 viantage accordian.jpeg" />
+    <Content Include="product 3\40 rodney harpsichord.jpeg" />
+    <Content Include="product 3\41 mini harpsichord.jpeg" />
+    <Content Include="product 3\42 bechtel harpsichord.jpeg" />
+    <Content Include="product 3\43 antique harpsichord.jpeg" />
+    <Content Include="product 3\44 upright harpsichord.jpg" />
+    <Content Include="product 3\45 lute harpsichord.jpeg" />
+    <Content Include="product 3\5 piano accordian.jpeg" />
+    <Content Include="product 3\6 cream pearl accordian.jpg" />
+    <Content Include="product 3\7 honer button accordian.jpg" />
+    <Content Include="product 3\8 red piano accordian.jpg" />
+    <Content Include="product 3\9 mahogany accordian.jpg" />
+    <Content Include="products 2\1.jpeg" />
+    <Content Include="products 2\2.jpeg" />
+    <Content Include="products 2\3.jpg" />
+    <Content Include="products 2\4.jpg" />
+    <Content Include="products\1 miniatue flute.jpeg" />
+    <Content Include="products\10 rosewood flute.jpeg" />
+    <Content Include="products\11 bamboo flute.jpg" />
+    <Content Include="products\12 hand painted flute.jpg" />
+    <Content Include="products\13 reed flute.jpg" />
+    <Content Include="products\14 concert flute.jpeg" />
+    <Content Include="products\15 silver plated flute.jpeg" />
+    <Content Include="products\16 yamaha recorder.jpeg" />
+    <Content Include="products\17 music recorder.jpg" />
+    <Content Include="products\18 yamaha soprano recorder.jpg" />
+    <Content Include="products\19 alto recordder.jpeg" />
+    <Content Include="products\2 handmade flute.jpg" />
+    <Content Include="products\20 professional recorder.jpeg" />
+    <Content Include="products\21 woodwind recorder.jpeg" />
+    <Content Include="products\22 plastic recorder.jpg" />
+    <Content Include="products\23 purple recorder.jpg" />
+    <Content Include="products\24 slade recorder.jpeg" />
+    <Content Include="products\25 soprano descant recorder.jpg" />
+    <Content Include="products\26 classic recorder.jpeg" />
+    <Content Include="products\27 renaissance recorder.jpeg" />
+    <Content Include="products\28 professional recorder.jpeg" />
+    <Content Include="products\29Yamaha-Treble-Recorder.jpg" />
+    <Content Include="products\3 bamboo flute.jpeg" />
+    <Content Include="products\30 yamaha piece recorder.jpg" />
+    <Content Include="products\31 branded saxophone.jpeg" />
+    <Content Include="products\32 alto saxophone.jpeg" />
+    <Content Include="products\33 tenor saxophone.jpg" />
+    <Content Include="products\34 woodwind tenor saxophone.jpg" />
+    <Content Include="products\35 vintage saxophone.jpg" />
+    <Content Include="products\36 rosetti saxophone.jpg" />
+    <Content Include="products\37 blue saxophone.jpg" />
+    <Content Include="products\38  electirc saxophone.jpeg" />
+    <Content Include="products\39 saxophone lamp.jpeg" />
+    <Content Include="products\4 wooden basari.jpg" />
+    <Content Include="products\40 classic saxophone.jpg" />
+    <Content Include="products\41  piccolo set.jpeg" />
+    <Content Include="products\42 designed piccolos.jpeg" />
+    <Content Include="products\43 clasic piccolo.jpg" />
+    <Content Include="products\44 mouth organ student.jpg" />
+    <Content Include="products\45 silver coated mouthorgan.jpeg" />
+    <Content Include="products\46 honer mouthorgan.jpeg" />
+    <Content Include="products\47 10 hole mouthorgan.jpg" />
+    <Content Include="products\48 hermolo mouthorgan.jpeg" />
+    <Content Include="products\49 tremolo harmonica.jpg" />
+    <Content Include="products\5 brass flute.jpg" />
+    <Content Include="products\50 harmonic mouthorgan set.jpg" />
+    <Content Include="products\6 yamaha brass flute.jpeg" />
+    <Content Include="products\7 aluminium flute.jpeg" />
+    <Content Include="products\8 golden flute.jpg" />
+    <Content Include="products\9 wodden flute.jpeg" />
+    <Content Include="recorder.aspx" />
+    <Content Include="saxophone.aspx" />
+    <Content Include="sitar1.aspx" />
+    <Content Include="snare drum.aspx" />
+    <Content Include="stev.aspx" />
+    <Content Include="submitform.aspx" />
+    <Content Include="tabla.aspx" />
+    <Content Include="thankyou.aspx" />
+    <Content Include="timpani.aspx" />
+    <Content Include="tryadmin.aspx" />
+    <Content Include="veena2\100 digital piano stand.jpg" />
+    <Content Include="veena2\101 clarinet piccolo.jpg" />
+    <Content Include="veena2\102 sopranino piccolo.jpg" />
+    <Content Include="veena2\40 cool saxophone.jpg" />
+    <Content Include="veena2\41 red saxophone.jpg" />
+    <Content Include="veena2\42 colourful saxophone.jpg" />
+    <Content Include="veena2\43 mini saxophone.jpg" />
+    <Content Include="veena2\44 bamboo saxophone.jpg" />
+    <Content Include="veena2\45 wood saxophone.jpeg" />
+    <Content Include="veena2\46 saxophone stand.jpeg" />
+    <Content Include="veena2\47 silversonic saxophone.jpeg" />
+    <Content Include="veena2\48 piccolo oboe.jpeg" />
+    <Content Include="veena2\49 antique piccolo.jpg" />
+    <Content Include="veena2\49 wooden piccolo.jpeg" />
+    <Content Include="veena2\50  classical sarod.jpg" />
+    <Content Include="veena2\51 pair of cymbals.jpg" />
+    <Content Include="veena2\52 finger cymbals.jpg" />
+    <Content Include="veena2\53 wave candle cymbals.jpg" />
+    <Content Include="veena2\54 ride cymbal.jpg" />
+    <Content Include="veena2\55 sabian ride cymbal.jpg" />
+    <Content Include="veena2\56 cymbal with mapex.jpg" />
+    <Content Include="veena2\57 crash cymbal.jpg" />
+    <Content Include="veena2\58 aluminium lightweight cymbal.jpg" />
+    <Content Include="veena2\59 hit hat cymbal.jpg" />
+    <Content Include="veena2\60 music cymbals.jpg" />
+    <Content Include="veena2\61 cymbal with holes.jpg" />
+    <Content Include="veena2\62 drum cymbals.jpg" />
+    <Content Include="veena2\63 professional cymbals.jpg" />
+    <Content Include="veena2\64 drum set cymbals.jpg" />
+    <Content Include="veena2\65 cymbal stand.jpg" />
+    <Content Include="veena2\66 concert snare drum.jpg" />
+    <Content Include="veena2\67 cocobolo snare drum.jpg" />
+    <Content Include="veena2\68 maple snare drum.jpg" />
+    <Content Include="veena2\69 classic snare maple.jpg" />
+    <Content Include="veena2\70 segmented snare drum.jpg" />
+    <Content Include="veena2\71 gold  series snare.jpg" />
+    <Content Include="veena2\72 master snare drum.jpg" />
+    <Content Include="veena2\73 purpleheart stave drum.jpg" />
+    <Content Include="veena2\74 hybrid maple snaredrum.jpg" />
+    <Content Include="veena2\75 perl snare drum.jpg" />
+    <Content Include="veena2\76marching snare drum.jpg" />
+    <Content Include="veena2\77 pipe band snare drum.jpg" />
+    <Content Include="veena2\78 acoustic snare drum.jpg" />
+    <Content Include="veena2\79 blue snare drum.jpg" />
+    <Content Include="veena2\80 canadian maple snare.jpg" />
+    <Content Include="veena2\81 custom snare drum.jpg" />
+    <Content Include="veena2\82 yamaha snare drum.jpg" />
+    <Content Include="veena2\83 wooden snare drum.jpg" />
+    <Content Include="veena2\84 black snare drum.jpg" />
+    <Content Include="veena2\85 orchestral snare drum.jpg" />
+    <Content Include="veena2\86 U-series piano.jpg" />
+    <Content Include="veena2\87 spinet piano.jpg" />
+    <Content Include="veena2\88 yamaha piano.jpg" />
+    <Content Include="veena2\89 white piano.jpg" />
+    <Content Include="veena2\90 furstein white piano.jpg" />
+    <Content Include="veena2\91 steinway grand piano.jpg" />
+    <Content Include="veena2\92 concert piano.jpg" />
+    <Content Include="veena2\93 rosewood grand piano.jpg" />
+    <Content Include="veena2\94 square piano.jpg" />
+    <Content Include="veena2\95 chickering grend piano.jpg" />
+    <Content Include="veena2\96 antique piano.jpg" />
+    <Content Include="veena2\97 custom baby piano.jpg" />
+    <Content Include="veena2\98 bluthner style piano.jpg" />
+    <Content Include="veena2\99 electric piano.jpg" />
+    <Content Include="veenaaspx.aspx" />
+    <Content Include="veena\1 yamaha fiberglass concert timpani.jpg" />
+    <Content Include="veena\10 high quality timpani mallets.jpg" />
+    <Content Include="veena\11 pair of timapni kettle drums.jpg" />
+    <Content Include="veena\12 single timpani drum.jpg" />
+    <Content Include="veena\13 ludwing timpani drums.jpg" />
+    <Content Include="veena\14 classic timpani.jpg" />
+    <Content Include="veena\15 copper plated classic timpani.jpg" />
+    <Content Include="veena\16 tabla.jpeg" />
+    <Content Include="veena\17 tabla pair red model.jpg" />
+    <Content Include="veena\18 tabla gandharva look.jpeg" />
+    <Content Include="veena\19 sheesham wood handmade brass tabla.jpg" />
+    <Content Include="veena\2 majestic symphonic timpani.jpg" />
+    <Content Include="veena\20 copper desingned tabla.jpg" />
+    <Content Include="veena\21 tabla drum set.jpg" />
+    <Content Include="veena\22 professional tabla set.jpg" />
+    <Content Include="veena\23 professional pakhawaj.jpg" />
+    <Content Include="veena\24 maridangam.jpg" />
+    <Content Include="veena\25 designed tabla set.jpg" />
+    <Content Include="veena\26 tree godess drim.jpg" />
+    <Content Include="veena\27 dejembe drum.jpg" />
+    <Content Include="veena\28 red black djembe drum.jpg" />
+    <Content Include="veena\29 professional djembe drum.jpg" />
+    <Content Include="veena\3 yamaha smooth copper timpani.jpg" />
+    <Content Include="veena\30 wooden djembe drum.jpg" />
+    <Content Include="veena\4 professional series generation 2 timpani.jpg" />
+    <Content Include="veena\41 rudra veena.jpg" />
+    <Content Include="veena\42 teak wood rudra veena.jpg" />
+    <Content Include="veena\43 sarswati veena.jpg" />
+    <Content Include="veena\44 sarswati veena.jpg" />
+    <Content Include="veena\45 vichitra veena.jpg" />
+    <Content Include="veena\46 Vichitra Veena.jpg" />
+    <Content Include="veena\47 sarangi.jpg" />
+    <Content Include="veena\48 classical.jpg" />
+    <Content Include="veena\49 sarod.jpg" />
+    <Content Include="veena\5 complete timpani drum.jpg" />
+    <Content Include="veena\50  classical sarod.jpg" />
+    <Content Include="veena\6 professional copper timpani.jpg" />
+    <Content Include="veena\7 hammered copper timpani.jpg" />
+    <Content Include="veena\8 timpani sticks.jpg" />
+    <Content Include="veena\9 professional timpani sticks.jpg" />
+    <Content Include="violin1.aspx" />
+    <Content Include="WebForm8.aspx" />
+    <Content Include="WebForm9.aspx" />
+    <None Include="music.jpg\00jpg" />
+    <Content Include="music.jpg\1.jpg" />
+    <Content Include="music.jpg\2.jpg" />
+    <Content Include="music.jpg\3.jpg" />
+    <Content Include="music.jpg\4.jpg" />
+    <Content Include="music.jpg\8.jpg" />
+    <Content Include="music.jpg\9.jpg" />
+    <Content Include="music.jpg\10.jpg" />
+    <Content Include="music.jpg\11.jpg" />
+    <Content Include="music.jpg\12.jpg" />
+    <Content Include="music.jpg\13.jpg" />
+    <Content Include="music.jpg\14.jpg" />
+    <Content Include="music.jpg\2 mechanical.jpg" />
+    <Content Include="music.jpg\20 hand decorated violin.jpg" />
+    <Content Include="music.jpg\5 dulux fancy violin.jpg" />
+    <Content Include="music.jpg\6 hardanger violin.jpg" />
+    <Content Include="music.jpg\7 skinny bone electric.jpg" />
+    <Content Include="music.jpg\8 bridge lyra violin.jpg" />
+    <Content Include="music.jpg\9 black purplr violin.jpg" />
+    <Content Include="Payment.aspx" />
+    <Content Include="product.aspx" />
+    <Content Include="productimage\sitar.jpeg" />
+    <Content Include="productimage\tabla00.jpeg" />
+    <Content Include="userlogin1.aspx" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap\js\jquery-3.5.1.slim.min.js" />
+    <Content Include="css\StyleSheet1.css" />
+    <Content Include="images\backgroundimage.jpg" />
+    <Content Include="images\login image.jpeg" />
+    <Content Include="images\music 8.jpg" />
+    <Content Include="images\music 9.jpg" />
+    <Content Include="images\music.jpeg" />
+    <Content Include="images\music00.jpg" />
+    <Content Include="images\music01.jpeg" />
+    <Content Include="images\music1.jpeg" />
+    <Content Include="images\music2.jpeg" />
+    <Content Include="images\music4.jpg" />
+    <Content Include="images\music50.jpg" />
+    <Content Include="images\music6.jpg" />
+    <Content Include="images\tabla.jpg" />
+    <Content Include="images\userlogin.jpg" />
+    <Content Include="StyleSheet1.css" />
+    <Content Include="userregistration.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="homepage.aspx" />
+    <Content Include="WebForm4.aspx" />
+    <Content Include="WebForm5.aspx" />
+    <Content Include="WebForm6.aspx" />
+    <Content Include="WebForm7.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="accordion.aspx.cs">
+      <DependentUpon>accordion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="accordion.aspx.designer.cs">
+      <DependentUpon>accordion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActionResult.cs" />
+    <Compile Include="addtocart.aspx.cs">
+      <DependentUpon>addtocart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addtocart.aspx.designer.cs">
+      <DependentUpon>addtocart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin1.aspx.cs">
+      <DependentUpon>admin1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin1.aspx.designer.cs">
+      <DependentUpon>admin1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminproduct1.aspx.cs">
+      <DependentUpon>adminproduct1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminproduct1.aspx.designer.cs">
+      <DependentUpon>adminproduct1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bill.aspx.cs">
+      <DependentUpon>bill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bill.aspx.designer.cs">
+      <DependentUpon>bill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="billnew.aspx.cs">
+      <DependentUpon>billnew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="billnew.aspx.designer.cs">
+      <DependentUpon>billnew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart1.aspx.cs">
+      <DependentUpon>cart1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart1.aspx.designer.cs">
+      <DependentUpon>cart1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CartItem.cs" />
+    <Compile Include="cymbals.aspx.cs">
+      <DependentUpon>cymbals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cymbals.aspx.designer.cs">
+      <DependentUpon>cymbals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="demoadmin.aspx.cs">
+      <DependentUpon>demoadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="demoadmin.aspx.designer.cs">
+      <DependentUpon>demoadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="discountproduct.aspx.cs">
+      <DependentUpon>discountproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="discountproduct.aspx.designer.cs">
+      <DependentUpon>discountproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="flute.aspx.cs">
+      <DependentUpon>flute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="flute.aspx.designer.cs">
+      <DependentUpon>flute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forget.aspx.cs">
+      <DependentUpon>forget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forget.aspx.designer.cs">
+      <DependentUpon>forget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aboutus.aspx.cs">
+      <DependentUpon>Aboutus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aboutus.aspx.designer.cs">
+      <DependentUpon>Aboutus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminlogin.aspx.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminlogin.aspx.designer.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminproduct.aspx.cs">
+      <DependentUpon>adminproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminproduct.aspx.designer.cs">
+      <DependentUpon>adminproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forget1.aspx.cs">
+      <DependentUpon>forget1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forget1.aspx.designer.cs">
+      <DependentUpon>forget1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guitar1.aspx.cs">
+      <DependentUpon>Guitar1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guitar1.aspx.designer.cs">
+      <DependentUpon>Guitar1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="harmonium.aspx.cs">
+      <DependentUpon>harmonium.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="harmonium.aspx.designer.cs">
+      <DependentUpon>harmonium.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="harpsichord.aspx.cs">
+      <DependentUpon>harpsichord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="harpsichord.aspx.designer.cs">
+      <DependentUpon>harpsichord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="information.aspx.cs">
+      <DependentUpon>information.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="information.aspx.designer.cs">
+      <DependentUpon>information.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommonFn.cs" />
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payment1.aspx.cs">
+      <DependentUpon>payment1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payment1.aspx.designer.cs">
+      <DependentUpon>payment1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="piano.aspx.cs">
+      <DependentUpon>piano.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="piano.aspx.designer.cs">
+      <DependentUpon>piano.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="piccolo.aspx.cs">
+      <DependentUpon>piccolo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="piccolo.aspx.designer.cs">
+      <DependentUpon>piccolo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="placeorder.aspx.cs">
+      <DependentUpon>placeorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="placeorder.aspx.designer.cs">
+      <DependentUpon>placeorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product.aspx.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product.aspx.designer.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recorder.aspx.cs">
+      <DependentUpon>recorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recorder.aspx.designer.cs">
+      <DependentUpon>recorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="saxophone.aspx.cs">
+      <DependentUpon>saxophone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="saxophone.aspx.designer.cs">
+      <DependentUpon>saxophone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sitar1.aspx.cs">
+      <DependentUpon>sitar1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitar1.aspx.designer.cs">
+      <DependentUpon>sitar1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="snare drum.aspx.cs">
+      <DependentUpon>snare drum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="snare drum.aspx.designer.cs">
+      <DependentUpon>snare drum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="stev.aspx.cs">
+      <DependentUpon>stev.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stev.aspx.designer.cs">
+      <DependentUpon>stev.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="submitform.aspx.cs">
+      <DependentUpon>submitform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="submitform.aspx.designer.cs">
+      <DependentUpon>submitform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tabla.aspx.cs">
+      <DependentUpon>tabla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tabla.aspx.designer.cs">
+      <DependentUpon>tabla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="thankyou.aspx.cs">
+      <DependentUpon>thankyou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thankyou.aspx.designer.cs">
+      <DependentUpon>thankyou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="timpani.aspx.cs">
+      <DependentUpon>timpani.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="timpani.aspx.designer.cs">
+      <DependentUpon>timpani.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tryadmin.aspx.cs">
+      <DependentUpon>tryadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tryadmin.aspx.designer.cs">
+      <DependentUpon>tryadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="veenaaspx.aspx.cs">
+      <DependentUpon>veenaaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="veenaaspx.aspx.designer.cs">
+      <DependentUpon>veenaaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="violin1.aspx.cs">
+      <DependentUpon>violin1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="violin1.aspx.designer.cs">
+      <DependentUpon>violin1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="userlogin1.aspx.cs">
+      <DependentUpon>userlogin1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userlogin1.aspx.designer.cs">
+      <DependentUpon>userlogin1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="userregistration.aspx.cs">
+      <DependentUpon>userregistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userregistration.aspx.designer.cs">
+      <DependentUpon>userregistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homepage.aspx.cs">
+      <DependentUpon>homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homepage.aspx.designer.cs">
+      <DependentUpon>homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm4.aspx.cs">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm4.aspx.designer.cs">
+      <DependentUpon>WebForm4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm5.aspx.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm5.aspx.designer.cs">
+      <DependentUpon>WebForm5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm6.aspx.cs">
+      <DependentUpon>WebForm6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm6.aspx.designer.cs">
+      <DependentUpon>WebForm6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm7.aspx.cs">
+      <DependentUpon>WebForm7.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm7.aspx.designer.cs">
+      <DependentUpon>WebForm7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm8.aspx.cs">
+      <DependentUpon>WebForm8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm8.aspx.designer.cs">
+      <DependentUpon>WebForm8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm9.aspx.cs">
+      <DependentUpon>WebForm9.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm9.aspx.designer.cs">
+      <DependentUpon>WebForm9.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap2\css\bootstrap-grid.css.map" />
+    <Content Include="bootstrap2\css\bootstrap-grid.min.css.map" />
+    <Content Include="bootstrap2\css\bootstrap-reboot.css.map" />
+    <Content Include="bootstrap2\css\bootstrap-reboot.min.css.map" />
+    <Content Include="bootstrap2\css\bootstrap.css.map" />
+    <Content Include="bootstrap2\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap2\js\bootstrap.bundle.js.map" />
+    <Content Include="bootstrap2\js\bootstrap.bundle.min.js.map" />
+    <Content Include="bootstrap2\js\bootstrap.js.map" />
+    <Content Include="bootstrap2\js\bootstrap.min.js.map" />
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="Site2.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49894</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44327/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
